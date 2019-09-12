@@ -1,10 +1,11 @@
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
-from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url('', include('apps.core.urls')),
-    url('usuarios/', include('apps.usuarios.urls')),
-    url('admin/', admin.site.urls),
+    path('', include('apps.core.urls')),
+    path('usuarios/', include('apps.usuarios.urls')),
+    path('programas/', include('apps.programas.urls')),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

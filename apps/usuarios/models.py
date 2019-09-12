@@ -7,7 +7,8 @@ class Usuario(models.Model):
     nome = models.CharField(max_length=100)
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     clienteassociado = models.ManyToManyField(Cliente)
-    programa = models.ForeignKey(Programa, on_delete=models.PROTECT)
+    programa = models.ForeignKey(
+    	Programa, on_delete=models.PROTECT, null=True, blank=True)
 
 
     def __str__(self):

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% for usuario in object_list %}
+
+{{ usuario.nome }}<br>
+
+{% endfor %}
+
+{% endblock %}

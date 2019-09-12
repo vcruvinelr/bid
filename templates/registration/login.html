@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+
+
+
+    <div class="py-3" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 pb-3"><img class="img-fluid d-block w-25 mx-auto" src="{% static 'img/cobrape.jpg' %}"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="border col-md-6 shadow">
+            <form action="" method ="post" id="c_form-h" class="p-3 text-center">
+                  {% csrf_token %}
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="">Seja bem vindo&nbsp;<small class="text-muted text-center"><br>Faça seu login</small></h2>
+                </div>
+              </div>
+              <div class="form-group row"> <label for="id_username" class="col-2 col-form-label">E-mail</label>
+                <div class="col-10">
+                  <input type="text" class="form-control" name="username" id="id_username" placeholder="mail@example.com"> </div>
+              </div>
+              <div class="form-group row"> <label for="id_password" class="col-2 col-form-label">Password</label>
+                <div class="col-10">
+                  <input type="password" class="form-control" name="password" id="id_password" placeholder="Password"> </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+<form action="" method="post">
+
+  </form>
