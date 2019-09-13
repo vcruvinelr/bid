@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h1>Olá {{ usuario.usuario.nome }}, Seja bem vindo!</h1>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+<a href="{% url 'list_usuarios' %}">Gerenciar Usuarios</a>
+<a href="{% url 'list_clientes' %}">Gerenciar Clientes/Mutuário</a>
+
+
+
+{% if usuario.usuario.programa %}
+
+<a href="{% url 'edit_programa' usuario.usuario.programa.id %}">Editar Programa</a>
+
+{% else %}
+
+<a href="{% url 'create_programa' %}">Criar Programa</a>
+
+{% endif %}
+
+{% endblock %}

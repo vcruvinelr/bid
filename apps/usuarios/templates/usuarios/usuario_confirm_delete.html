@@ -5,9 +5,10 @@
 <form method="POST">
 
 {% csrf_token %}
+<h1>Você deseja realmente deletar {{ usuario.id }}</h1>
 
 {{ form }}
 
-<button type="submit">Salvar</button>
+<button type="submit">Confirmar</button>
 </form>
 {% endblock %}

@@ -7,8 +7,13 @@
 
 <a href="{% url 'update_usuarios' usuario.id %}">
     {{ usuario }}
-</a><br>
+</a>
+
+<a href="{% url 'delete_usuarios' usuario.id %}">Deletar Usuário</a>
+<br>
 
 {% endfor %}
+
+<a href="{% url 'create_usuarios' %}">Novo Usuario</a>
 
 {% endblock %}

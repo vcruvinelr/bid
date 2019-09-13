@@ -1,23 +1,45 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block main %}
 
-<h1>Olá {{ usuario.usuario.nome }}, Seja bem vindo!</h1>
+<div class="py-3" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pb-3"><img class="img-fluid d-block w-25 mx-auto" src="{% static 'img/cobrape.jpg'%}"></div>
+      </div>
+      <div class="row">
 
-<a href="{% url 'logout' %}">Logout</a>
+        <div class="col-md-6 border-bottom mb-3">
+          <h4 class="" >Bem vindo, {{ usuario.usuario.nome }}</h4>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12 border-bottom mb-3">
+                <h5 class="">{{ usuario.usuario.programa }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<a href="{% url 'list_usuarios' %}">Gerenciar Usuarios</a>
 
-
-
-{% if usuario.usuario.programa %}
-
-<a href="{% url 'edit_programa' usuario.usuario.programa.id %}">Editar Programa</a>
-
-{% else %}
-
-<a href="{% url 'create_programa' %}">Criar Programa</a>
-
-{% endif %}
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3 border-bottom pb-3">
+          <ul class="list-group">
+            <a href="{% url 'cadastros' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">CADASTROS<br><i class="fa fa-list text-muted fa-lg"></i></li></a>
+            <li class="list-group-item d-flex justify-content-between align-items-center shadow border">LISTA DE PROGRAMAS<br><i class="fa fa-list text-muted fa-lg"></i></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

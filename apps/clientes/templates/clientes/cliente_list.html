@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% for cliente in object_list %}
+
+
+<a href="">
+    {{ cliente }}
+</a>
+
+<a href="">Deletar Cliente</a>
+<br>
+
+{% endfor %}
+
+<a href="{% url 'create_cliente' %}">Novo Cliente</a>
+
+{% endblock %}
