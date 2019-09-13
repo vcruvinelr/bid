@@ -4,7 +4,10 @@
 
 {% for usuario in object_list %}
 
-{{ usuario.nome }}<br>
+
+<a href="{% url 'update_usuarios' usuario.id %}">
+    {{ usuario }}
+</a><br>
 
 {% endfor %}
 
