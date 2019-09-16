@@ -16,3 +16,9 @@ def cadastros(request):
 	data = {}
 	data['usuario'] = request.user
 	return render(request, 'core/cadastros.html', data)
+
+@login_required
+def diarios(request):
+	data = {}
+	data['usuario'] = request.user
+	return render(request, 'core/diarios.html', data)

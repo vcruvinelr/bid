@@ -5,11 +5,11 @@
 {% for cliente in object_list %}
 
 
-<a href="">
+<a href="{% url 'editar_cliente' cliente.id %}">
     {{ cliente }}
 </a>
 
-<a href="">Deletar Cliente</a>
+<a href="{% url 'delete_cliente' cliente.id %}">Deletar Cliente</a>
 <br>
 
 {% endfor %}

@@ -1,13 +1,31 @@
 {% extends 'base.html' %}
-
+{% load bootstrap %}
 {% block main %}
+
+OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ object }}
 
 <form method="POST">
 
 {% csrf_token %}
 
-{{ form }}
+{{ form|bootstrap }}
 
 <button type="submit">Salvar</button>
+
 </form>
+
+<br>
+<br>
+
+<a href="{% url 'create_documento' object.id %}">Adicionar documento</a> <br><br>
+
+{%  for documento in object.documento_set.all %}
+
+
+<a href="{{ documento.arquivo.url }}">{{ documento.descricao }}, {{ documento.proprietario }}</a>
+
+<br>
+<br>
+{% endfor %}
+
 {% endblock %}

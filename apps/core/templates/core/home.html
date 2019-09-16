@@ -12,7 +12,7 @@
       <div class="row">
 
         <div class="col-md-6 border-bottom mb-3">
-          <h4 class="" >Bem vindo, {{ usuario.usuario.nome }}</h4>
+          <h5 class="" >Bem vindo, {{ usuario.usuario.nome }}</h5>
         </div>
         <div class="col-md-6">
           <div class="row">
@@ -30,7 +30,8 @@
         <div class="col-md-6 mb-3 border-bottom pb-3">
           <ul class="list-group">
             <a href="{% url 'cadastros' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">CADASTROS<br><i class="fa fa-list text-muted fa-lg"></i></li></a>
-            <li class="list-group-item d-flex justify-content-between align-items-center shadow border">LISTA DE PROGRAMAS<br><i class="fa fa-list text-muted fa-lg"></i></li>
+            <a href="{% url 'cadastros' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">PROGRAMAS<br><i class="fa fa-list text-muted fa-lg"></i></li></a>
+            <a href="{% url 'diarios' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">DIARIO DE BORDO<br><i class="fa fa-book text-muted fa-lg"></i></li></a>
           </ul>
         </div>
         <div class="col-md-6">

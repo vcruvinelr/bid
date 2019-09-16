@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h1>Olá {{ usuario.usuario.nome }}, aqui você encontrará o diário de bordo do programa!</h1>
+
+<a href="{% url 'list_diarios' %}">Lista de Diários</a>
+
+{% endblock %}

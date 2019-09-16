@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'apps.clientes',
     'apps.documentos',
     'apps.core',
+    'bootstrapform',
+    'apps.diario',
 ]
 
 MIDDLEWARE = [
@@ -91,11 +93,18 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-]
+] # pode ter varias pastas de arquivos estaticos.
+
 
 LOGIN_REDIRECT_URL = 'home'
 

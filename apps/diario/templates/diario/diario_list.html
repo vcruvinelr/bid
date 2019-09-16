@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% for diario in object_list %}
+
+
+<a href="">
+    {{ diario }}
+</a>
+
+<a href="">Deletar Diario</a>
+<br>
+
+{% endfor %}
+
+<a href="">Novo Diario</a>
+
+{% endblock %}
