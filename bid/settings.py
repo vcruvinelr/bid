@@ -7,7 +7,7 @@ SECRET_KEY = '8bz-(7@5@t*@u301i0r6nt7q1kq)&1e*6)82@2bhilu9+4%b62'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['52.14.20.233']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,14 +58,21 @@ WSGI_APPLICATION = 'bid.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bid_db',
-        'USER': 'bid',
-        'PASSWORD': 'qwe123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'bid_db',
+#         'USER': 'bid',
+#         'PASSWORD': 'qwe123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
