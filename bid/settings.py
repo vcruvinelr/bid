@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'apps.core',
     'bootstrapform',
     'apps.diario',
+    'apps.cobrape'
 ]
 
 MIDDLEWARE = [

@@ -2,18 +2,30 @@
 
 {% block main %}
 
-{% for diario in object_list %}
+Lista de Itens no Diario de Bordo
 
+<br>
+<br>
 
-<a href="">
+  {% for diario in object_list %}
+
+<a href="{% url 'edit_diarios' diario.id %}">
     {{ diario }}
 </a>
 
-<a href="">Deletar Diario</a>
+<a href="{% url 'delete_diario' diario.id %}">Deletar Diario</a>
 <br>
 
-{% endfor %}
+  {% endfor %}
 
-<a href="">Novo Diario</a>
+  {% if not object_list %}
+
+Lista vazia!
+<br>
+<br>
+
+  {% endif %}
+
+<a href="{% url 'create_diario' %}">Novo Diario</a>
 
 {% endblock %}

@@ -17,7 +17,11 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ object }}
 <br>
 <br>
 
+{% if object %}
+
 <a href="{% url 'create_documento' object.id %}">Adicionar documento</a> <br><br>
+
+{% endif %}
 
 {%  for documento in object.documento_set.all %}
 

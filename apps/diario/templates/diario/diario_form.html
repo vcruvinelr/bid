@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}
+
+OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ diario.titulo }}
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form|bootstrap }}
+
+<button type="submit">Salvar</button>
+<br>
+<br>
+{% if object %}
+<a href="{% url 'delete_diario' object.id %}"><button type="button" name="button">Deletar</button></a>
+{% endif %}
+</form>
+
+{% endblock %}

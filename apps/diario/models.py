@@ -2,6 +2,7 @@ from django.db import models
 from apps.programas.models import Programa
 from django.contrib.auth.models import User
 from apps.usuarios.models import Usuario
+from django.urls import reverse
 
 class Diario(models.Model):
     titulo = models.CharField(max_length=100)
@@ -13,3 +14,6 @@ class Diario(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    def get_absolute_url(self):
+        return reverse('edit_diarios', args=[self.id])
