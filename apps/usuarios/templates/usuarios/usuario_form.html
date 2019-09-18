@@ -20,16 +20,41 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ object }}
 {% if object %}
 
 <a href="{% url 'create_documento' object.id %}">Adicionar documento</a> <br><br>
-
 {% endif %}
 
-{%  for documento in object.documento_set.all %}
+<h2>Lista de Documentos</h2>
+<ul>
+
+{% for documento in object.documento_set.all %}
 
 
-<a href="{{ documento.arquivo.url }}">{{ documento.descricao }}, {{ documento.proprietario }}</a>
+<li>
+
+  <a href="{{ documento.arquivo.url }}">{{ documento.descricao }}, {{ documento.proprietario }}</a><br>
+
+</li>
 
 <br>
 <br>
 {% endfor %}
+</ul>
+
+<h2>Registros no Diário</h2>
+<ul>
+
+{% for diario in object.diario_set.all %}
+
+
+<li>
+
+  <a href="{{ diario.get_absolute_url }}">{{ diario.titulo }}, {{ diario.proprietario }}</a><br>
+
+</li>
+
+<br>
+<br>
+{% endfor %}
+</ul>
+
 
 {% endblock %}
