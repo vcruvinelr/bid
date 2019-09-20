@@ -11,9 +11,10 @@ class Diario(models.Model):
     data = models.DateField(auto_now=False)
     programa = models.ForeignKey(
     	Programa, on_delete=models.PROTECT, null=True, blank=True)
+    lida = models.BooleanField(default="False")
 
     def __str__(self):
         return self.titulo
 
     def get_absolute_url(self):
-        return reverse('edit_diarios', args=[self.id])
+        return reverse('list_diarios')

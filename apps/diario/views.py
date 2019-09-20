@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from .models import Diario
 from django.urls import reverse_lazy
@@ -9,6 +10,10 @@ from django.views.generic import (
     CreateView,
 )
 from .forms import DiarioForm
+from django.urls import reverse_lazy, reverse
+from django.views import View
+from django.http import HttpResponse
+
 
 class DiarioList(ListView):
     model = Diario
@@ -20,6 +25,10 @@ class DiarioList(ListView):
 class DiarioEdit(UpdateView):
     model = Diario
     form_class = DiarioForm
+
+    def get_success_url(self):
+        return reverse_lazy('update_usuarios', args=[self.request.user.id])
+        #return reverse('update_usuarios') #neste caso o object id será o nome do usuário! não confundir com o object.id do diario.
 
     def get_form_kwargs(self): #metodo para injetar usuario no form
         kwargs = super(DiarioEdit, self).get_form_kwargs()
@@ -39,3 +48,30 @@ class DiarioNovo(CreateView):
         kwargs = super(DiarioNovo, self).get_form_kwargs()
         kwargs.update({'user': self.request.user})
         return kwargs
+
+class DiarioEditUsuario(UpdateView):
+    model = Diario
+    form_class = DiarioForm
+    #success_url = reverse_lazy('list_diarios')
+
+    def get_success_url(self):
+        #return reverse_lazy('edit_diarios_usuario', args=[self.request.user.id])
+        return reverse_lazy('edit_diarios_usuario', args=[self.object.id])
+
+    def get_form_kwargs(self): #metodo para injetar usuario no form
+        kwargs = super(DiarioEditUsuario, self).get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
+
+class VerificouDiario(View):
+    def post(self, *args, **kwargs):
+        registro_diario = Diario.objects.get(id=kwargs['pk'])
+        registro_diario.lida = True
+        registro_diario.save()
+
+        usuario = self.request.user.usuario
+        response = json.dumps(
+        {'mensagem': 'Verificação Realizada', 'mensagem2': 'Finalmente!',
+        'diarios': usuario.total_registros_diario}
+        )
+        return HttpResponse(response, content_type='application/json')

@@ -47,7 +47,7 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ object }}
 
 <li>
 
-  <a href="{{ diario.get_absolute_url }}">{{ diario.titulo }}, {{ diario.proprietario }}</a><br>
+  <a href="{% url 'edit_diarios' diario.id %}">{{ diario.titulo }}, {{ diario.proprietario }}</a><br>
 
 </li>
 
@@ -55,6 +55,8 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ object }}
 <br>
 {% endfor %}
 </ul>
+
+<h3>total de registros: {{ object.total_registros_diario }}</h3>
 
 
 {% endblock %}

@@ -9,7 +9,7 @@ Lista de Itens no Diario de Bordo
 
   {% for diario in object_list %}
 
-<a href="{% url 'edit_diarios' diario.id %}">
+<a href="{% url 'edit_diarios_usuario' diario.id %}">
     {{ diario }}
 </a>
 

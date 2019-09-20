@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 {% block main %}
+{% load static %}
 
-OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ diario.titulo }}
+OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ diario.titulo }} || {{ object.id }}
 
 <form method="POST">
 
@@ -13,9 +14,26 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ diario.titulo }}
 <button type="submit">Salvar</button>
 <br>
 <br>
+
 {% if object %}
 <a href="{% url 'delete_diario' object.id %}"><button type="button" name="button">Deletar</button></a>
+
+<button onclick="verificouDiario({{ diario.id }})" class="btn btn-info" type="button">Verificou Diário</button>
+
 {% endif %}
 </form>
+
+<h2 id="diarios_atualizados"></h2>
+<p id="mensagem"></p>
+
+
+{% endblock %}
+
+{% block static %}
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/funcoes-ajax.js' %}"></script>
+
+
 
 {% endblock %}
