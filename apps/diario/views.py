@@ -66,12 +66,25 @@ class DiarioEditUsuario(UpdateView):
 class VerificouDiario(View):
     def post(self, *args, **kwargs):
         registro_diario = Diario.objects.get(id=kwargs['pk'])
-        registro_diario.lida = True
+        registro_diario.lida = True #vem do models
         registro_diario.save()
 
         usuario = self.request.user.usuario
         response = json.dumps(
-        {'mensagem': 'Verificação Realizada', 'mensagem2': 'Finalmente!',
-        'diarios': usuario.total_registros_diario}
+            {'diarios': 'Diários Restates a serem verificados pelo gestor: ' + str(usuario.total_registros_diario),
+            'mensagem': usuario.nome+',' + ' A verificação do diário foi realizada com sucesso!'}
+        )
+        return HttpResponse(response, content_type='application/json')
+
+class DesmarcouDiario(View):
+    def post(self, *args, **kwargs):
+        registro_diario = Diario.objects.get(id=kwargs['pk'])
+        registro_diario.lida = False #vem do models
+        registro_diario.save()
+
+        usuario = self.request.user.usuario
+        response = json.dumps(
+            {'diarios01': 'Diários Restates a serem verificados pelo gestor: ' + str(usuario.total_registros_diario),
+            'mensagem01': usuario.nome+',' + ' A desmarcação do diário foi realizada com sucesso!'}
         )
         return HttpResponse(response, content_type='application/json')

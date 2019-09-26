@@ -18,14 +18,36 @@ OBJETO (PARA FINS DE TESTE) OBJETO EDITADO: {{ diario.titulo }} || {{ object.id 
 {% if object %}
 <a href="{% url 'delete_diario' object.id %}"><button type="button" name="button">Deletar</button></a>
 
-<button onclick="verificouDiario({{ diario.id }})" class="btn btn-info" type="button">Verificou Diário</button>
+{% if not object.lida %}
+<button onclick="verificouDiario({{ diario.id }})" class="btn btn-info" type="button">Marcar Como lido</button>
+<br>
+<br>
+<h2><p id="mensagem"></p></h2>
+<p id="diarios"></p>
+
+{% else %}
+<button onclick="desmarcarDiario({{ diario.id }})" class="btn btn-info" type="button">Marcar como não lido</button>
+<br>
+<br>
+<h2><p id="mensagem01"></p></h2>
+<p id="diarios01"></p>
+
+{% endif %}
+<br>
+{{ object.lida }}
 
 {% endif %}
 </form>
 
-<h2 id="diarios_atualizados"></h2>
-<p id="mensagem"></p>
 
+<!-- a linha abaixo está funcionando, realizar o link -->
+<br>
+
+  <!-- verificar o componente "id" -->
+<!--   -->
+
+
+<p></p>
 
 {% endblock %}
 

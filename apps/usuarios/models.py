@@ -18,7 +18,19 @@ class Usuario(models.Model):
 
     @property
     def total_registros_diario(self):
+        total = self.diario_set.all().filter(lida=False).aggregate(
+            Count('titulo'))['titulo__count']
+        return total
+
+    @property
+    def total_registros_diario01(self):
         total = self.diario_set.all().aggregate(
+            Count('titulo'))['titulo__count']
+        return total
+
+    @property
+    def total_registros_diario02(self):
+        total = self.diario_set.all().filter(lida=True).aggregate(
             Count('titulo'))['titulo__count']
         return total
 

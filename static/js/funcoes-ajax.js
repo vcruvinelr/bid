@@ -11,7 +11,7 @@ function verificouDiario(id){
     success: function(result){
         console.log(result);
         $("#mensagem").text(result.mensagem);
-        $("#diarios_atualizados").text(result.diarios);        
+        $("#diarios_atualizados").text(result.diarios);
     }
 
   });

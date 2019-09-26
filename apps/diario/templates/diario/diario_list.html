@@ -26,6 +26,10 @@ Lista vazia!
 
   {% endif %}
 
+<br>
+<h4> Total de diários do usuário: {{ user.usuario.total_registros_diario01 }} </h4> <!-- object do diario -->
+<h4> Total de diários a serem revisados: {{ user.usuario.total_registros_diario }} </h4>
+
 <a href="{% url 'create_diario' %}">Novo Diario</a>
 
 {% endblock %}
