@@ -26,21 +26,27 @@
 
 
       </div>
-      <div class="row">
-        <div class="col-md-6 mb-3 border-bottom pb-3">
-          <ul class="list-group">
-            <a href="{% url 'cadastros' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">CADASTROS<br><i class="fa fa-list text-muted fa-lg"></i></li></a>
-            <a href="{% url 'cadastros' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">PROGRAMAS<br><i class="fa fa-list text-muted fa-lg"></i></li></a>
-            <a href="{% url 'diarios' %}"><li class="list-group-item d-flex justify-content-between align-items-center shadow border list-group-item-action">DIARIO DE BORDO<br><i class="fa fa-book text-muted fa-lg"></i></li></a>
-          </ul>
+
+      <div class="row" >
+        <div class="col-md-2 align-items-center justify-content-center flex-grow-1 shadow m-2 border p-2" ><i class="fa fa-4x fa-fw fa-users flex-grow-1 d-flex mx-4 px-2 pb-2"></i>
+          <a class="btn text-decoration-none flex-grow-1 btn-primary" href="{% url 'list_usuarios' %}">Gerenciamento de&nbsp;<br>Usuários</a>
         </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="col-md-2 align-items-center justify-content-center flex-grow-1 shadow m-2 border p-2"><i class="fa fa-4x fa-fw fa-users flex-grow-1 d-flex mx-4 px-2 pb-2"></i>
+                <h5 class="text-center">Gerenciamento de Clientes</h5>
+              </div>
+              <div class="col-md-2 align-items-center justify-content-center flex-grow-1 shadow m-2 border p-2"><i class="fa fa-4x fa-fw fa-users flex-grow-1 d-flex mx-4 px-2 pb-2"></i>
+                <h5 class="text-center">Gerenciamento de Proj./Prog.</h5>
+              </div>
+              <div class="col-md-2 align-items-center justify-content-center flex-grow-1 shadow m-2 border p-2"><i class="fa fa-4x fa-fw fa-users flex-grow-1 d-flex mx-4 px-2 pb-2"></i>
+                <h5 class="text-center"></h5>
+              </div>
+              <div class="col-md-2 align-items-center justify-content-center flex-grow-1 shadow m-2 border p-2"><i class="fa fa-4x fa-fw fa-users flex-grow-1 d-flex mx-4 px-2 pb-2"></i>
+                <h5 class="text-center"></h5>
+              </div>
+            </div>
+
+
+
   </div>
 
 {% endblock %}

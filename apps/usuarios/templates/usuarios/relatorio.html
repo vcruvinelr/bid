@@ -1,0 +1,13 @@
+<!-- tem que inserir o css em um bloco aqui dentro -->
+
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% csrf_token %}
+
+<h1>Relatório</h1>
+
+<h2>{{ today }}</h2>
+
+{% endblock %}

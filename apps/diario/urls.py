@@ -11,6 +11,7 @@ from .views import (
     DiarioNovo,
     VerificouDiario,
     DesmarcouDiario,
+    ExportarCSV,
 )
 
 urlpatterns = [
@@ -20,5 +21,6 @@ urlpatterns = [
     path('verificou-diario/<int:pk>/', VerificouDiario.as_view(), name="verificou_diario"),
     path('desmarcou-diario/<int:pk>/', DesmarcouDiario.as_view(), name="desmarcou_diario"),
     path('deletar/<int:pk>/', DiarioDelete.as_view(), name="delete_diario"),
-    path('novo/', DiarioNovo.as_view(), name="create_diario")
+    path('novo/', DiarioNovo.as_view(), name="create_diario"),
+    path('exportarcsv/', ExportarCSV.as_view(), name="exportar_csv")
 ]

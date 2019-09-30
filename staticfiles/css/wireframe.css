@@ -9,6 +9,8 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -86,8 +88,8 @@ p {
 
 abbr[title],
 abbr[data-original-title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
+  text-decoration: none;
+  text-decoration: none;
   cursor: help;
   border-bottom: 0; }
 
@@ -148,7 +150,7 @@ a {
   -webkit-text-decoration-skip: objects; }
   a:hover {
     color: #686868;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -2019,11 +2021,11 @@ fieldset:disabled a.btn {
   background-color: transparent; }
   .btn-link:hover {
     color: #686868;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
     border-color: transparent; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: underline;
+    text-decoration: none;
     border-color: transparent;
     box-shadow: none; }
   .btn-link:disabled, .btn-link.disabled {
@@ -3299,7 +3301,7 @@ input[type="button"].btn-block {
     content: "/"; }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: underline; }
+  text-decoration: none; }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: none; }
@@ -4040,7 +4042,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4060,7 +4062,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4077,7 +4079,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4106,7 +4108,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6306,7 +6308,7 @@ a.text-dark:hover, a.text-dark:focus {
     text-shadow: none !important;
     box-shadow: none !important; }
   a:not(.btn) {
-    text-decoration: underline; }
+    text-decoration: none; }
   abbr[title]::after {
     content: " (" attr(title) ")"; }
   pre {

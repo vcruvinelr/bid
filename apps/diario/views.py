@@ -13,6 +13,7 @@ from .forms import DiarioForm
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.http import HttpResponse
+import csv
 
 
 class DiarioList(ListView):
@@ -88,3 +89,18 @@ class DesmarcouDiario(View):
             'mensagem01': usuario.nome+',' + ' A desmarcação do diário foi realizada com sucesso!'}
         )
         return HttpResponse(response, content_type='application/json')
+
+class ExportarCSV(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+        diarios = Diario.objects.filter(lida=False)
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Titulo'])
+
+        for diario in diarios:
+            writer.writerow([diario.id, diario.titulo])
+
+        return response

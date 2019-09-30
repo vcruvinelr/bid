@@ -22,3 +22,9 @@ def diarios(request):
 	data = {}
 	data['usuario'] = request.user
 	return render(request, 'core/diarios.html', data)
+
+@login_required
+def teste(request):
+	data = {}
+	data['usuario'] = request.user
+	return render(request, 'core/home2.html', data)
